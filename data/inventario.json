@@ -1,0 +1,154 @@
+[
+    {
+        "ip": "192.168.1.1",
+        "hostname": "Router-Principal",
+        "mac": "00:11:22:33:44:55",
+        "tipo": "Router",
+        "sistema": "Cisco IOS XE",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.102",
+        "hostname": "Laptop-Dybala",
+        "mac": "00:11:22:33:44:AC",
+        "tipo": "Laptop",
+        "sistema": "Windows 11",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.2",
+        "hostname": "Switch-Core",
+        "mac": "00:11:22:33:44:66",
+        "tipo": "Switch",
+        "sistema": "Cisco Catalyst 2960",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.10",
+        "hostname": "Servidor-Linux",
+        "mac": "00:11:22:33:44:77",
+        "tipo": "Servidor",
+        "sistema": "Ubuntu Server 24.04",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.11",
+        "hostname": "Servidor-Windows",
+        "mac": "00:11:22:33:44:88",
+        "tipo": "Servidor",
+        "sistema": "Windows Server 2022",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.20",
+        "hostname": "AP-Laboratorio",
+        "mac": "00:11:22:33:44:99",
+        "tipo": "Access Point",
+        "sistema": "Cisco Aironet",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.30",
+        "hostname": "Impresora-HP",
+        "mac": "00:11:22:33:44:AA",
+        "tipo": "Impresora",
+        "sistema": "HP LaserJet",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.101",
+        "hostname": "PC-Administracion",
+        "mac": "00:11:22:33:44:AB",
+        "tipo": "PC",
+        "sistema": "Windows 11 Pro",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.50",
+        "hostname": "Camara-Entrada",
+        "mac": "00:11:22:33:44:AD",
+        "tipo": "Camara IP",
+        "sistema": "Hikvision",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.60",
+        "hostname": "NAS-Backups",
+        "mac": "00:11:22:33:44:AE",
+        "tipo": "NAS",
+        "sistema": "TrueNAS",
+        "estado": "Activo"
+    },
+    {
+        "ip": "192.168.1.65",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.66",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.69",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.71",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.72",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.74",
+        "hostname": "DYBALA",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.77",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.84",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    },
+    {
+        "ip": "192.168.1.254",
+        "hostname": "desconocido",
+        "mac": "pendiente",
+        "tipo": "desconocido",
+        "sistema": "desconocido",
+        "estado": "activo"
+    }
+]

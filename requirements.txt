@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+netmiko
+paramiko
+pyyaml
+dicttoxml
+python-multipart
+pytest
+httpx
