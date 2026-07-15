@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NetAdmin API
 
 Sistema de inventario, monitoreo y administración de red desarrollado en Python
@@ -185,3 +186,7 @@ administrando solo dispositivos detectados o registrados manualmente.
 ## Autor / Equipo
 
 _Completar con nombres del equipo._
+=======
+# SHD-y-SHP
+Actividades de Producto y Desempeño del segundo parcial de automatización de infraestructura
+>>>>>>> 720dc835d4ac16718e392016d54b393926a1c045
