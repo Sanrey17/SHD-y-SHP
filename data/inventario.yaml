@@ -1,78 +1,72 @@
-- estado: Activo
-  hostname: Router-Principal
+- estado: activo
+  hostname: Router-Core
   ip: 192.168.1.1
   mac: 00:11:22:33:44:55
   sistema: Cisco IOS XE
   tipo: Router
-- estado: Activo
-  hostname: Laptop-Dybala
-  ip: 192.168.1.102
-  mac: 00:11:22:33:44:AC
-  sistema: Windows 11
-  tipo: Laptop
-- estado: Activo
+- estado: activo
   hostname: Switch-Core
   ip: 192.168.1.2
   mac: 00:11:22:33:44:66
   sistema: Cisco Catalyst 2960
   tipo: Switch
-- estado: Activo
+- estado: activo
   hostname: Servidor-Linux
   ip: 192.168.1.10
   mac: 00:11:22:33:44:77
   sistema: Ubuntu Server 24.04
   tipo: Servidor
-- estado: Activo
+- estado: activo
   hostname: Servidor-Windows
   ip: 192.168.1.11
   mac: 00:11:22:33:44:88
   sistema: Windows Server 2022
   tipo: Servidor
-- estado: Activo
-  hostname: AP-Laboratorio
-  ip: 192.168.1.20
-  mac: 00:11:22:33:44:99
-  sistema: Cisco Aironet
-  tipo: Access Point
-- estado: Activo
-  hostname: Impresora-HP
-  ip: 192.168.1.30
-  mac: 00:11:22:33:44:AA
-  sistema: HP LaserJet
-  tipo: Impresora
-- estado: Activo
+- estado: activo
+  hostname: Laptop-Dybala
+  ip: 192.168.1.102
+  mac: 00:11:22:33:44:AC
+  sistema: Windows 11
+  tipo: Laptop
+- estado: activo
   hostname: PC-Administracion
   ip: 192.168.1.101
   mac: 00:11:22:33:44:AB
   sistema: Windows 11 Pro
   tipo: PC
-- estado: Activo
+- estado: activo
+  hostname: AP-Laboratorio
+  ip: 192.168.1.20
+  mac: 00:11:22:33:44:99
+  sistema: Cisco Aironet
+  tipo: Access Point
+- estado: activo
+  hostname: Impresora-HP
+  ip: 192.168.1.30
+  mac: 00:11:22:33:44:AA
+  sistema: HP LaserJet
+  tipo: Impresora
+- estado: activo
   hostname: Camara-Entrada
   ip: 192.168.1.50
   mac: 00:11:22:33:44:AD
   sistema: Hikvision
   tipo: Camara IP
-- estado: Activo
+- estado: activo
   hostname: NAS-Backups
   ip: 192.168.1.60
   mac: 00:11:22:33:44:AE
   sistema: TrueNAS
   tipo: NAS
 - estado: activo
-  hostname: desconocido
-  ip: 192.168.1.65
+  hostname: XboxOne
+  ip: 192.168.1.64
   mac: pendiente
   sistema: desconocido
   tipo: desconocido
 - estado: activo
   hostname: desconocido
   ip: 192.168.1.66
-  mac: pendiente
-  sistema: desconocido
-  tipo: desconocido
-- estado: activo
-  hostname: desconocido
-  ip: 192.168.1.69
   mac: pendiente
   sistema: desconocido
   tipo: desconocido
@@ -96,19 +90,37 @@
   tipo: desconocido
 - estado: activo
   hostname: desconocido
-  ip: 192.168.1.77
-  mac: pendiente
-  sistema: desconocido
-  tipo: desconocido
-- estado: activo
-  hostname: desconocido
   ip: 192.168.1.84
   mac: pendiente
   sistema: desconocido
   tipo: desconocido
 - estado: activo
   hostname: desconocido
+  ip: 192.168.1.85
+  mac: pendiente
+  sistema: desconocido
+  tipo: desconocido
+- estado: activo
+  hostname: desconocido
   ip: 192.168.1.254
+  mac: pendiente
+  sistema: desconocido
+  tipo: desconocido
+- estado: activo
+  hostname: DYBALA
+  ip: 192.168.56.1
+  mac: pendiente
+  sistema: desconocido
+  tipo: desconocido
+- estado: activo
+  hostname: desconocido
+  ip: 192.168.56.100
+  mac: pendiente
+  sistema: desconocido
+  tipo: desconocido
+- estado: activo
+  hostname: METASPLOITABLE
+  ip: 192.168.56.103
   mac: pendiente
   sistema: desconocido
   tipo: desconocido
