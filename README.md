@@ -53,7 +53,7 @@ netadmin_api/
 │   ├── paramiko_admin.py  # Administración de equipos Linux (SSH)
 │   └── exportador.py      # Exportación JSON / YAML / XML
 │
-├── data/                  # Inventario exportado (se genera al usar /exportar)
+├── data/                  # Inventario exportado
 ├── tests/
 │   └── test_api.py        # Pruebas unitarias (pytest)
 ├── requirements.txt
@@ -65,12 +65,14 @@ netadmin_api/
 ### 1. Crear y activar entorno virtual
 
 **Windows:**
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
 **Linux / macOS:**
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -82,17 +84,35 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Uso
+# Uso
 
-### Ejecutar el servidor
+## Ejecutar el servidor
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-- API: http://127.0.0.1:8000
-- Documentación interactiva (Swagger): http://127.0.0.1:8000/docs
-- Documentación alternativa (ReDoc): http://127.0.0.1:8000/redoc
+Servicios disponibles:
+
+- API:
+```
+http://127.0.0.1:8000
+```
+
+- Dashboard web del inventario:
+```
+http://127.0.0.1:8000/dashboard
+```
+
+- Documentación interactiva Swagger:
+```
+http://127.0.0.1:8000/docs
+```
+
+- Documentación alternativa ReDoc:
+```
+http://127.0.0.1:8000/redoc
+```
 
 ### Ejecutar pruebas unitarias
 
@@ -100,24 +120,26 @@ uvicorn app.main:app --reload
 pytest -v
 ```
 
-## Endpoints
+# Endpoints
 
-| Método | Ruta                  | Descripción                              |
-|--------|-----------------------|-------------------------------------------|
-| GET    | `/`                    | Verifica que la API está funcionando      |
-| GET    | `/dispositivos`        | Lista todos los dispositivos (admite filtros `?tipo=` y `?estado=`) |
-| GET    | `/dispositivos/{ip}`   | Obtiene un dispositivo por IP             |
-| POST   | `/dispositivos`        | Agrega un dispositivo manualmente         |
-| PUT    | `/dispositivos/{ip}`   | Actualiza datos de un dispositivo         |
-| DELETE | `/dispositivos/{ip}`   | Elimina un dispositivo del inventario     |
-| POST   | `/escanear?red=CIDR`   | Escanea una red (ej. `192.168.1.0/24`)    |
-| POST   | `/red/comando`         | Ejecuta un comando en un equipo Cisco (Netmiko) |
-| POST   | `/linux/comando`       | Ejecuta un comando en un equipo Linux (Paramiko) |
-| GET    | `/exportar`            | Exporta el inventario a JSON, YAML y XML  |
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/` | Verifica que la API está funcionando |
+| GET | `/dashboard` | Dashboard web del inventario |
+| GET | `/dispositivos` | Lista todos los dispositivos (admite filtros `?tipo=` y `?estado=`) |
+| GET | `/dispositivos/{ip}` | Obtiene un dispositivo por IP |
+| POST | `/dispositivos` | Agrega un dispositivo manualmente |
+| PUT | `/dispositivos/{ip}` | Actualiza datos de un dispositivo |
+| DELETE | `/dispositivos/{ip}` | Elimina un dispositivo del inventario |
+| POST | `/escanear?red=CIDR` | Escanea una red (ej. `192.168.1.0/24`) |
+| POST | `/red/comando` | Ejecuta un comando en un equipo Cisco (Netmiko) |
+| POST | `/linux/comando` | Ejecuta un comando en un equipo Linux (Paramiko) |
+| GET | `/exportar` | Exporta el inventario a JSON, YAML y XML |
 
 ## Ejemplos de prueba en Postman
 
-**Agregar dispositivo** — `POST /dispositivos`
+### Agregar dispositivo — `POST /dispositivos`
+
 ```json
 {
     "ip": "192.168.1.1",
@@ -129,7 +151,8 @@ pytest -v
 }
 ```
 
-**Comando en Cisco** — `POST /red/comando`
+### Comando en Cisco — `POST /red/comando`
+
 ```json
 {
     "ip": "192.168.1.1",
@@ -141,7 +164,8 @@ pytest -v
 }
 ```
 
-**Comando en Linux** — `POST /linux/comando`
+### Comando en Linux — `POST /linux/comando`
+
 ```json
 {
     "ip": "192.168.1.10",
@@ -153,40 +177,40 @@ pytest -v
 
 ## Tabla de diagnóstico de errores HTTP
 
-| Código | Significado           | Cuándo ocurre en esta API                                   |
-|--------|------------------------|---------------------------------------------------------------|
-| 200    | OK                     | Petición GET/PUT/DELETE exitosa                              |
-| 201    | Created                | Dispositivo creado correctamente (`POST /dispositivos`)      |
-| 400    | Bad Request            | IP duplicada al crear, o rango de red CIDR inválido en `/escanear` |
-| 401    | Unauthorized           | Reservado para cuando se agregue autenticación por token     |
-| 403    | Forbidden              | Reservado para permisos insuficientes sobre un recurso       |
-| 404    | Not Found              | Dispositivo no encontrado por IP                              |
-| 500    | Internal Server Error  | Error inesperado del servidor (ej. fallo no controlado en un módulo) |
+| Código | Significado | Cuándo ocurre |
+|--------|-------------|---------------|
+| 200 | OK | Petición GET/PUT/DELETE exitosa |
+| 201 | Created | Dispositivo creado correctamente |
+| 400 | Bad Request | Datos inválidos o IP duplicada |
+| 401 | Unauthorized | Autenticación pendiente |
+| 403 | Forbidden | Permisos insuficientes |
+| 404 | Not Found | Dispositivo no encontrado |
+| 500 | Internal Server Error | Error interno del servidor |
 
 ## Alcance recomendado
 
-Limitar las pruebas a una red local o simulada, por ejemplo `192.168.1.0/24`,
-administrando solo dispositivos detectados o registrados manualmente.
+Limitar las pruebas a una red local o simulada, por ejemplo:
 
-## Mejoras futuras (SHP / SHD)
+```
+192.168.1.0/24
+```
+
+administrando únicamente dispositivos detectados o registrados manualmente.
+
+## Mejoras futuras
 
 - Base de datos SQLite en lugar de inventario en memoria.
 - Autenticación por token (JWT / API Key).
-- Dashboard web.
 - Escaneo automático programado.
-- Histórico de cambios y comparación de configuraciones.
-- Reportes en PDF y alertas por correo / Telegram.
+- Histórico de cambios.
+- Reportes PDF y alertas.
 
 ## Trabajo colaborativo
 
-- Repositorio en GitHub con ramas por equipo.
+- Repositorio GitHub con ramas por equipo.
 - Uso de issues, commits y pull requests.
-- Este README documenta instalación y uso del proyecto.
+- Documentación completa del proyecto.
 
 ## Autor / Equipo
 
 _Completar con nombres del equipo._
-=======
-# SHD-y-SHP
-Actividades de Producto y Desempeño del segundo parcial de automatización de infraestructura
->>>>>>> 720dc835d4ac16718e392016d54b393926a1c045
